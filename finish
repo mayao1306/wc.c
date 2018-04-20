@@ -3,12 +3,14 @@
 int main()
 {
 	 char string[9999] = {0};
-	 int i=0,len,word=0,sentence=0,empty=0,line=1,note=0;
+	 int i=0,len,word=1,sentence=0,empty=0,line=1,note=0;
 	 FILE *fp;
 	 fp = fopen("c file.txt","r");
 	 
 	  if(!fp)
 	 {
+	 	line=0;
+	 	word=0;
 	  	printf("cannot open file!\n");
 	 }
 	 fscanf(fp,"\n%[^'~']" ,string);
