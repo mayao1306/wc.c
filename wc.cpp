@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	 char string[9999] = {0};
+	 int i=0,len,word=0,sentence=0,empty=0,line=1,note=0;
+	 FILE *fp;
+	 fp = fopen("c file.txt","r");
+	 
+	  if(!fp)
+	 {
+	  	printf("cannot open file!\n");
+	 }
+	 fscanf(fp,"\n%[^'~']" ,string);
+	 printf("%s\n",string);
+	 len=strlen(string);
+	 for(i=0;i<len;i++)
+	 {
+	 	if(string[i]==' '||string[i]==',')
+	 	{
+	 		if('a'<=string[i-1]<='z'||'A'<=string[i-1]<='Z')
+			 word++;
+		}
+	 	if(string[i]=='.'||string[i]=='!'||string[i]=='?')
+	 	sentence++;
+	 	if(string[i]=='\n')
+	 	{
+	 		if(string[i+1]=='\n')
+	 		{
+	 			empty++;
+			}
+	 		line++;
+		}
+		if(string[i]=='*')
+		{
+			note++;	
+		}
+		
+	 }
+	 
+	 	printf("char=");
+		printf("%d\n",len);
+		printf("word=");
+		printf("%d\n",word);
+		printf("line=");
+		printf("%d\n",line);
+		printf("empty=");
+		printf("%d\n",empty);
+		printf("note=");
+		printf("%d\n",note);
+		fclose(fp);
+		
+	 return 0;
+}
