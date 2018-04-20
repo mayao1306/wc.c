@@ -42,6 +42,8 @@ int main()
 		printf("%d\n",len);
 		printf("word=");
 		printf("%d\n",word);
+		printf("sentence=");
+		printf("%d\n",sentence);
 		printf("line=");
 		printf("%d\n",line);
 		printf("empty=");
